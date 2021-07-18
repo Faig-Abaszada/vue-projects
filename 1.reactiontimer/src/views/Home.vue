@@ -3,7 +3,7 @@
     <h1>Reaction Timer App</h1>
     <button @click="startGame">Play</button>
     <Block v-if="isPlaying"/>
-    <Result />
+    <Result v-if="showResult"/>
   </div>
 </template>
 
@@ -22,11 +22,13 @@ export default {
     return {
       isPlaying: false,
       delay: null,
+      showResult: false,
     }
   },
   methods: {
     startGame() {
       this.isPlaying = true;
+
     }
 
   }
