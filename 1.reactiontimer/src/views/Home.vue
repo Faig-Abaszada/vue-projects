@@ -2,7 +2,7 @@
   <div class="home">
     <h1>Reaction Timer App</h1>
     <button @click="startGame">Play</button>
-    <Block v-if="isPlaying"/>
+    <Block v-if="isPlaying" :delay="delay"/>
     <Result v-if="showResult"/>
   </div>
 </template>
@@ -28,7 +28,7 @@ export default {
   methods: {
     startGame() {
       this.isPlaying = true;
-
+      this.delay = 2000 + Math.random() * 5000;
     }
 
   }

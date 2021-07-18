@@ -8,6 +8,7 @@
 <script>
 
 export default {
+  props: ['delay'],
   components: {
   }
 }
