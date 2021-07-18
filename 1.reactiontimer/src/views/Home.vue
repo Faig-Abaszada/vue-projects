@@ -2,7 +2,7 @@
   <div class="home">
     <h1>Reaction Timer App</h1>
     <button @click="startGame">Play</button>
-    <Block />
+    <Block v-if="isPlaying"/>
     <Result />
   </div>
 </template>
@@ -18,8 +18,16 @@ export default {
     Block,
     Result,
   },
+  data() {
+    return {
+      isPlaying: false,
+      delay: null,
+    }
+  },
   methods: {
-    startGame() {}
+    startGame() {
+      this.isPlaying = true;
+    }
 
   }
 }
