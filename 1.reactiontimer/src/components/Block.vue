@@ -21,6 +21,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.showBlock = true;
+      this.startTimer();
     }, this.delay);
   },
   methods: {
