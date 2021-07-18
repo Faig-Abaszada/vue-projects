@@ -13,7 +13,9 @@ export default {
   },
   data() {
     return {
-      showBlock: false
+      showBlock: false,
+      timer: null,
+      reactionTime: 0,
     }
   },
   mounted() {
