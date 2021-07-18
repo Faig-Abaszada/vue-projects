@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <h1>Reaction Timer App</h1>
+    <button @click="startGame">Play</button>
     <Block />
     <Result />
   </div>
@@ -16,6 +17,10 @@ export default {
   components: {
     Block,
     Result,
+  },
+  methods: {
+    startGame() {}
+
   }
 }
 </script>
