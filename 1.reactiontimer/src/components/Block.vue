@@ -15,6 +15,11 @@ export default {
     return {
       showBlock: false
     }
+  },
+  mounted() {
+    setTimeout(() => {
+      this.showBlock = true;
+    }, this.delay);
   }
 }
 </script>
