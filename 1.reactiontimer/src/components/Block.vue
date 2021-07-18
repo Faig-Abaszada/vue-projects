@@ -1,6 +1,6 @@
 @@ -0,0 +1,17 @@
 <template>
-  <div class="block">
+  <div class="block" v-if="showBlock">
      STOP Timer!
   </div>
 </template>
@@ -10,6 +10,11 @@
 export default {
   props: ['delay'],
   components: {
+  },
+  data() {
+    return {
+      showBlock: false
+    }
   }
 }
 </script>
