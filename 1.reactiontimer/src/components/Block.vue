@@ -1,6 +1,6 @@
 @@ -0,0 +1,17 @@
 <template>
-  <div class="block" v-if="showBlock">
+  <div class="block" v-if="showBlock" @click="stopTimer">
      STOP Timer!
   </div>
 </template>
@@ -29,6 +29,9 @@ export default {
       this.timer = setInterval(() => {
           this.reactionTime += 10;
       }, 10)
+    },
+    stopTimer() {
+      clearInterval(this.timer);
     }
   }
 }
