@@ -22,6 +22,13 @@ export default {
     setTimeout(() => {
       this.showBlock = true;
     }, this.delay);
+  },
+  methods: {
+    startTimer() {
+      this.timer = setInterval(() => {
+          this.reactionTime += 10;
+      }, 10)
+    }
   }
 }
 </script>
