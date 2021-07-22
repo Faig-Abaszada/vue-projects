@@ -19,7 +19,17 @@ export default {
     }
   },
   mounted() {
+      fetch(this.uri)
+        .then((res) => {
+          return res.json();
+        }).then(data => {
 
+        this.title = data.title;
+        this.details = data.details;
+
+      }).catch((err) => {
+        console.log(err);
+      })
   }
 }
 </script>
