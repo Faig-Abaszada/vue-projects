@@ -6,7 +6,7 @@
       <div class="icons">
         <span class="material-icons">edit</span>
         <span class="material-icons" @click="deleteProject">delete</span>
-        <span class="material-icons">done</span>
+        <span class="material-icons" @click="toggleComplete">done</span>
       </div>
     </div>
     <div class="details" v-if="showDetails">
@@ -37,6 +37,13 @@ export default {
             console.log(err);
           })
 
+    },
+    toggleComplete() {
+      fetch(this.uri, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ complete: !this.project.complete })
+      })
     }
 
   },
