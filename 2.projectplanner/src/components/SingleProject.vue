@@ -30,6 +30,13 @@ export default {
   methods: {
     deleteProject() {
       fetch(this.uri, { method: 'DELETE' })
+          .then(() => {
+            this.$emit('delete', this.project.id)
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+
     }
 
   },
