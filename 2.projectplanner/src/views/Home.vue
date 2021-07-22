@@ -1,6 +1,10 @@
 <template>
   <div class="home">
-
+     <div v-if="projects.length">
+       <div v-for="project in projects" :key="project.id">
+         <p>{{ project.title }}</p>
+       </div>
+     </div>
   </div>
 </template>
 
@@ -12,7 +16,7 @@ export default {
   },
   data() {
     return {
-
+      projects: [],
     }
   },
   methods: {
