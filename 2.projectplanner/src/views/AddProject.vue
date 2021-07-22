@@ -1,9 +1,9 @@
 <template>
-  <form>
+  <form @submit.prevent="handleSubmit">
     <label>Title</label>
-    <input type="text" required>
+    <input type="text" required v-model="title">
     <label>Details</label>
-    <textarea required></textarea>
+    <textarea required v-model="details"></textarea>
     <button>Add Project</button>
   </form>
 </template>
@@ -12,11 +12,14 @@
 export default {
   data() {
     return {
-
+      title: '',
+      details: '',
     }
   },
   methods: {
-
+    handleSubmit() {
+      console.log(this.title, this.details);
+    }
   }
 }
 </script>
