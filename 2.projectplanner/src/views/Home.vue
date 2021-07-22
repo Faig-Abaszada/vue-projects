@@ -2,7 +2,7 @@
   <div class="home">
       <FilterNav @filterChange="currentNav = $event" :currentNav="currentNav"/>
      <div v-if="projects.length">
-       <div v-for="project in projects" :key="project.id">
+       <div v-for="project in filteredProjects" :key="project.id">
           <SingleProject :project="project" @delete="handleDelete" @done="handleDone"/>
        </div>
      </div>
@@ -47,6 +47,24 @@ export default {
     }).catch(err => {
       console.log(err);
     })
+  },
+  computed: {
+    filteredProjects() {
+      if (this.currentNav === 'completed') {
+        return this.projects.filter((project) => {
+          // project.complete db.json-da true veya false ola biler true ise arrayda qalacaq
+          return project.complete
+        })
+      }
+      if (this.currentNav === 'ongoing') {
+        return this.projects.filter((project) => {
+          // project.complete db.json-da true veya false ola biler true ise arrayda qalacaq
+          return !project.complete
+        })
+      }
+      return this.projects;
+    }
+
   }
 }
 </script>
