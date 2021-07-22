@@ -31,7 +31,7 @@ export default {
       let grabbedProject = this.projects.find(project => {
         return project.id === id;
       })
-      grabbedProject.complete = !p.complete;
+      grabbedProject.complete = !grabbedProject.complete;
     }
   },
   mounted() {
