@@ -15,6 +15,7 @@ export default {
     return {
       title: '',
       details: '',
+      uri: 'http://localhost:3000/projects/' + this.id
     }
   },
   mounted() {
