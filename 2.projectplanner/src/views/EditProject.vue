@@ -1,11 +1,9 @@
 <template>
   <form>
     <label>Title</label>
-    <input type="text" required>
-    <input type="text"  required>
+    <input type="text" required v-model="title">
     <label>Details</label>
-    <textarea required></textarea>
-    <textarea  required></textarea>
+    <textarea required v-model="details"></textarea>
     <button>Update Project</button>
   </form>
 </template>
@@ -15,7 +13,8 @@ export default {
   props: [],
   data() {
     return {
-
+      title: '',
+      details: '',
     }
   },
   mounted() {
