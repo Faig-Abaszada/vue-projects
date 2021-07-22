@@ -21,6 +21,16 @@ export default {
   },
   methods: {
 
+  },
+  mounted() {
+    fetch('http://localhost:3000/projects')
+      .then(res => {
+        return res.json();
+      }).then(data => {
+        this.projects = data;
+    }).catch(err => {
+      console.log(err);
+    })
   }
 }
 </script>
