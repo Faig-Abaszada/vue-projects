@@ -28,10 +28,10 @@ export default {
       })
     },
     handleDone(id) {
-      let p = this.projects.find(project => {
+      let grabbedProject = this.projects.find(project => {
         return project.id === id;
       })
-      p.complete = !p.complete;
+      grabbedProject.complete = !p.complete;
     }
   },
   mounted() {
