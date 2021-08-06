@@ -9,6 +9,7 @@
   </div>
 </template>
 
+
 <script>
 import SingleProject from "../components/SingleProject";
 import FilterNav from "../components/FilterNav";
