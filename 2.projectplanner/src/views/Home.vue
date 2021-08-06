@@ -28,7 +28,7 @@ export default {
   methods: {
     handleDelete(id) {
       this.projects = this.projects.filter((project) => {
-        return project.id !== project.id;
+        return project.id !== id;
       })
     },
     handleDone(id) {
